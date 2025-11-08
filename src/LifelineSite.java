@@ -6,9 +6,11 @@ public class LifelineSite {
         return units * rate * 0.5;
     }
 
+    private double getTaxAmount() {
+        return getBase() * 0.2;
+    }
+
     public double getBillableAmount() {
-        double base = getBase();
-        double tax = base * 0.2;
-        return base + tax;
+        return getBase() + getTaxAmount();
     }
 }
