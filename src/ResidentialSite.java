@@ -1,16 +1,12 @@
-public class ResidentialSite {
-    private double units;
-    private double rate;
+public class ResidentialSite extends Site {
 
-    private double getBase() {
+    @Override
+    protected double getBase() {
         return units * rate;
     }
 
-    private double getTaxAmount() {
-        return getBase() * 0.2;
-    }
-
-    public double getBillableAmount() {
-        return getBase() + getTaxAmount();
+    @Override
+    protected double getTaxRate() {
+        return 0.2;
     }
 }
