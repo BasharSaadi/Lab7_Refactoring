@@ -1,16 +1,12 @@
-public class CommercialSite {
-    private double units;
-    private double rate;
+public class CommercialSite extends Site {
 
-    private double getBase() {
+    @Override
+    protected double getBase() {
         return units * rate;
     }
 
-    private double getTaxAmount() {
-        return getBase() * 0.3;
-    }
-
-    public double getBillableAmount() {
-        return getBase() + getTaxAmount();
+    @Override
+    protected double getTaxRate() {
+        return 0.3;
     }
 }
