@@ -6,9 +6,11 @@ public class CommercialSite {
         return units * rate;
     }
 
+    private double getTaxAmount() {
+        return getBase() * 0.3;
+    }
+
     public double getBillableAmount() {
-        double base = getBase();
-        double tax = base * 0.3;
-        return base + tax;
+        return getBase() + getTaxAmount();
     }
 }
